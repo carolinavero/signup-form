@@ -14,15 +14,18 @@ formEl.addEventListener('submit', e => {
     inputEl.forEach(input => {
         
         /* empty */
-        if (input.value.length == 0)  {
+        if (input.value.length == 0) {
             input.classList.add("error")
+
             var spanError = document.createElement('span')
             var placeholderValue = input.placeholder;
             spanError.textContent = `${placeholderValue} cannot be empty`
             spanError.setAttribute("class", "error-msg")
+
             input.parentNode.insertBefore(spanError, input.nextSibling);
+            
         }
-        /* not empty */
+        /* not empty, invalid email */
         else if (input.value.match(mailFormat)) {
             console.log("email invalido")
             var spanErrorEmail = document.createElement('span')
@@ -30,6 +33,7 @@ formEl.addEventListener('submit', e => {
             console.log(spanErrorEmail)
             
         }
+        /* not empty */
         else {
 
             input.classList.remove("error")
