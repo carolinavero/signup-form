@@ -48,6 +48,9 @@ button {
 button:hover {
   opacity: .7;
 }
+button:focus {
+  outline: none;
+}
 .btn-primary {
   padding: 20px;
   font-size: 16px;
@@ -76,29 +79,36 @@ form {
   padding: 1.5rem;
   border-radius: 10px;
   margin-top: 1rem;
-  box-shadow: 0px 7px 0px hsl(0, 100%, 74%, 0.5);
+  box-shadow: 0px 7px 0px hsl(0, 76%, 66%);
+  width: 100%;
 }
 input {
   font-family: 'Poppins', sans-serif;
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   width: 100%;
   padding: 15px 35px;
-  margin-top: 10px;
+  margin-top: 20px;
   border-radius: 5px;
   font-weight: 600;
   font-size: 14px;
 }
 input:focus {
   outline: none;
-  border: 2px solid var(--blue);
+  border: 1px solid var(--blue);
+  color: #333;
 }
 input.error {
   border: 2px solid var(--red);
   background-image: url(images/icon-error.svg);
   background-repeat: no-repeat;
   background-position: 96%;
+  margin-top: 20px;
+}
+.email-field.error {
   color: var(--red);
-
+}
+.email-field.error:focus {
+  color: #333;
 }
 .hidden {
   display: none;
@@ -172,5 +182,8 @@ footer a {
   }
   .btn-success {
     font-size: 16px;;
+  }
+  .btn-primary {
+    margin-top: 0;
   }
 }
